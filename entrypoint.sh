@@ -4,11 +4,11 @@ source=${SOURCE:-.}
 
 cd "${GITHUB_WORKSPACE}"/"${source}" || exit
 
-echo "*** Start tagger ***"
+tcctl message --text "Start tagger"
 
 NEW_GIT_TAG=$(tcctl helpers generate_increment_version)
 
-echo "The new tag is: $NEW_GIT_TAG"
+tcctl message --text "The new tag is: $NEW_GIT_TAG"
 
 remote=$(git config --get remote.origin.url)
 repo=$(basename "$remote" .git)
@@ -23,4 +23,4 @@ curl -s -X POST https://api.github.com/repos/"$REPO_OWNER"/"$repo"/git/refs \
 }
 EOF
 
-echo "*** Finish ***"
+tcctl message --text "Finish"
