@@ -13,8 +13,5 @@ jobs:
           fetch-depth: '0'
       - name: Enlarge version and push tag
         uses: tenantcloud/tagger@main
-        run: |
-          git config --global user.email "o.debretseni@tenantcloud.com"
-          git config --global user.name "Oleh Debretseni"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
