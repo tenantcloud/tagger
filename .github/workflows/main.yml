@@ -8,13 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
+      - uses: odebretseni/gha-git-credentials@v2.1
         with:
           fetch-depth: '0'
           global: true
           name: 'Oleh Debretseni'
           email: 'o.debretseni@tenantcloud.com'
           actor: 'odebretseni'
-          token: '${{ secrets.GL_PAT_WEB_CENTRAL }}'
+          token: '${{ secrets.GITHUB_TOKEN }}'
       - name: Enlarge version and push tag
         uses: tenantcloud/tagger@main
