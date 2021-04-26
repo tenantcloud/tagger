@@ -11,8 +11,10 @@ jobs:
       - uses: actions/checkout@main
         with:
           fetch-depth: '0'
+          global: true
+          name: 'Oleh Debretseni'
+          email: 'o.debretseni@tenantcloud.com'
+          actor: 'odebretseni'
+          token: '${{ secrets.GL_PAT_WEB_CENTRAL }}'
       - name: Enlarge version and push tag
         uses: tenantcloud/tagger@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO_OWNER: tenantcloud
