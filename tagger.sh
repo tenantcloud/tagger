@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 
-source=${SOURCE:-.}
-
-cd "${GITHUB_WORKSPACE}"/"${source}" || exit
-
 tcctl message --text "Start tagger"
 
-git config --global user.name "tenantcloudteam"
+tcctl run git config --global user.name "tenantcloudteam"
 
-git config --global user.email team@tenantcloud.com
+tcctl run git config --global user.email team@tenantcloud.com
 
 NEW_GIT_TAG=$(tcctl helpers generate_increment_version)
 
