@@ -14,7 +14,7 @@ jobs:
       - name: Enlarge version and push tag
         uses: tenantcloud/tagger@main
         run: |
-          git config --local user.email "team@tenantcloud.com"
-          git config --local user.name "tenantcloudteam"
+          git config --global user.email "team@tenantcloud.com"
+          git config --global user.name "tenantcloudteam"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
