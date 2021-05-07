@@ -1,0 +1,9 @@
+# Editors
+.idea/*
+!.idea/fileTemplates
+
+# Misc
+.DS_Store
+/*.log
+*.swp
+
