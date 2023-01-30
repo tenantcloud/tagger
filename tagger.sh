@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+git config --global --add safe.directory /github/workspace
+
 tcctl message --text "Start tagger"
 
 tcctl run git config --global user.name "tenantcloudteam"
